@@ -24,6 +24,14 @@ public class AppleTree : MonoBehaviour
     void Start()
     {
         // Сбрасывать яблоки раз в секунду
+        Invoke("DropApple", 2f);
+    }
+
+    void DropApple()
+    {
+        GameObject apple = Instantiate(applePrefab);
+        apple.transform.position = transform.position;
+        Invoke("DropApple", secondsBetweenAppleDrops);
     }
 
     // Update is called once per frame
