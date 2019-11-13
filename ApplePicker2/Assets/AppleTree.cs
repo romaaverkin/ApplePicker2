@@ -44,4 +44,13 @@ public class AppleTree : MonoBehaviour
             speed = -Mathf.Abs(speed);
         }
     }
+
+    //Всегда вызывается 50 раз в секунду не зависимо от быстродействия компьютера
+    private void FixedUpdate()
+    {
+        if (Random.value < chanceToChangeDirections)
+        {
+            speed *= -1;
+        }
+    }
 }
